@@ -13,7 +13,7 @@ Day_view::Day_view()
     set_border_width(5);
     add_button.signal_clicked().connect(sigc::mem_fun(*this, &Day_view::addEvent));
 
-    add_button.set_label("Dodaj");
+    add_button.set_label(_("Add"));
     container->set_column_homogeneous(false);
 
 }
@@ -29,7 +29,7 @@ void Day_view::drawTable()
 
     for(unsigned int i=0; i<events->size(); i++) {
         ColorLabel *d = new ColorLabel(0, 0, events->at(i).getSummary(), events->at(i).getBgColor().getRevertColor(), events->at(i).getBgColor().getColor());
-        ColorLabel *ddel = new ColorLabel(0, 0, "Usuń");
+        ColorLabel *ddel = new ColorLabel(0, 0, _("Delete"));
 
         d->set_events(Gdk::BUTTON_PRESS_MASK);
         d->signal_button_press_event().connect(sigc::bind<int>( sigc::mem_fun(*this, &Day_view::editEvent), i));
@@ -122,7 +122,7 @@ void Day_view::attachBy()
             Event *new_event = new Event();
 
             setEventParameters(new_event);
-            ColorLabel *ddel = new ColorLabel(0, 0, "Usuń");
+            ColorLabel *ddel = new ColorLabel(0, 0, _("Delete"));
 
             ddel->set_size_request(50, 20);
 

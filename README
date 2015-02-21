@@ -1,8 +1,2 @@
 This project is a Calendar which displays on Wallpeper (below another windows).
 It's written in C++11 with gtkmm/cairomm library
-To compile this program follow this stes:
-aclocal
-autoheader
-automake --add-missing
-./configure
-make

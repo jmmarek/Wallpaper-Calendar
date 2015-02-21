@@ -32,13 +32,13 @@ void DB::createTable()
         execute("CREATE TABLE CALENDARS("  \
                 "id             INTEGER PRIMARY KEY AUTOINCREMENT," \
                 "name           CHAR(50)," \
-                "color          CHAR(50)," \
+                "color          CHAR(50)" \
                 " );");
+
         CalendarV calendarV;
-        calendarV.setName("Domyślny");
+        calendarV.setName(_("Default"));
         addCalendarToDB(calendarV);
     } catch(...) {
-
     }
 }
 
@@ -48,7 +48,7 @@ void DB::execute(std::string statement, callback function, void *data)
     int rc = sqlite3_exec(db, statement.c_str(), function, data, &zErrMsg);
     if( rc != SQLITE_OK ) {
         sqlite3_free(zErrMsg);
-        throw string("DB already exists");
+        throw string("Error");
     }
 }
 
@@ -149,6 +149,8 @@ int calendarsCallback(void *data, int argc, char **argv, char **azColName)
 std::vector<CalendarV> DB::getCalendarsFromDB(std::string where)
 {
     std::vector<CalendarV> calendars;
-    execute("SELECT * FROM CALENDARS "+where, calendarsCallback, &calendars);
+    try{
+        execute("SELECT * FROM CALENDARS "+where, calendarsCallback, &calendars);
+    }catch(...) {}
     return calendars;
 }

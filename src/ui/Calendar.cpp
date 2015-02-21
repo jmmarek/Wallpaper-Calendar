@@ -17,7 +17,7 @@ Calendar::Calendar(): bar(675, 20, ""), bar_l(50, 20, ""), bar_r(50, 20, ""), se
     cool.set_rgba(1, 1, 1);
     override_background_color(cool);
 
-    set_title("Wallpaper Calendar");
+    set_title(_("Wallpaper Calendar"));
 
     actual=true;
     t.setTime();
@@ -45,7 +45,7 @@ void Calendar::updateControls()
     bar.setLabel(t.monthName()+" "+std::to_string(t.getYear()));
     bar_l.setLabel("<");
     bar_r.setLabel(">");
-    settings_b.setLabel("Ustaw");
+    settings_b.setLabel(_("Settings"));
 
     month_control_grid.show_all_children();
     month_control_grid.show();

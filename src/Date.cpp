@@ -163,32 +163,32 @@ std::string Date::monthName(int current) ///<\param current if 0 then name of cu
 {
     switch (getMonth()+current) {
     case 0:
-        return "Grudzień";
+        return _("December");
     case 1:
-        return "Styczeń";
+        return _("January");
     case 2:
-        return "Luty";
+        return _("February");
     case 3:
-        return "Marzec";
+        return _("March");
     case 4:
-        return "Kwiecień";
+        return _("April");
     case 5:
-        return "Maj";
+        return _("Mai");
     case 6:
-        return "Czerwiec";
+        return _("June");
     case 7:
-        return "Lipiec";
+        return _("July");
     case 8:
-        return "Sierpień";
+        return _("August");
     case 9:
-        return "Wrzesień";
+        return _("September");
     case 10:
-        return "Październik";
+        return _("October");
     case 11:
-        return "Listopad";
+        return _("November");
     case 12:
-        return "Grudzień";
+        return _("December");
     default:
-        return "Styczeń";
+        return _("January");
     }
 }

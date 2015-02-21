@@ -94,25 +94,25 @@ bool Day::on_draw(const Cairo::RefPtr<Cairo::Context>& cr)
         string day_of_week;
         switch (day_week) {
         case 1:
-            day_of_week="Pon";
+            day_of_week=_("Mon");
             break;
         case 2:
-            day_of_week="Wt";
+            day_of_week=_("Tue");
             break;
         case 3:
-            day_of_week="Śr";
+            day_of_week=_("Wed");
             break;
         case 4:
-            day_of_week="Czw";
+            day_of_week=_("Thu");
             break;
         case 5:
-            day_of_week="Pt";
+            day_of_week=_("Fri");
             break;
         case 6:
-            day_of_week="So";
+            day_of_week=_("Sat");
             break;
         case 0:
-            day_of_week="Nd";
+            day_of_week=_("Sun");
             break;
         }
         cr->set_source_rgb(0.3, 0.4, 0.3);

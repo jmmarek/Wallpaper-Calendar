@@ -4,13 +4,12 @@
 #include <iostream>
 #include <string>
 #include <libical/ical.h>
+#include <glibmm/i18n.h>
 
 ///Object which represents date and handles usefull methods for time
 class Date
 {
 public:
-
-
     int getDay() const;
 
     int getMonth() const;

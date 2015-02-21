@@ -6,16 +6,16 @@ Settings::Settings(bool *actual)
     this->actual=actual;
     set_opacity(0.9);
     set_default_size(300, 80);
-    set_title("Ustawienia");
+    set_title(_("Settings"));
 
-    switching_view.append_page(container, "Główne");
-    switching_view.append_page(calendars_view, "Kalendarze");
+    switching_view.append_page(container, _("Main"));
+    switching_view.append_page(calendars_view, _("Calendars"));
 
     set_border_width(5);
 
     remove_button.signal_clicked().connect( sigc::mem_fun(*this,
                                             &Settings::removeOlder) );
-    remove_button.set_label("Usuń starsze niż");
+    remove_button.set_label(_("Remove older than"));
 
     container.set_column_homogeneous(false);
     drawTable();
@@ -73,13 +73,13 @@ void Settings::removeCalendar(int id)
 
 void Settings::importFromFile(int id)
 {
-    Gtk::FileChooserDialog dialog("Wybierz plik iCalendar",
+    Gtk::FileChooserDialog dialog(_("Select iCalendar file"),
                                   Gtk::FILE_CHOOSER_ACTION_OPEN);
     dialog.set_transient_for(*this);
 
 
-    dialog.add_button("_Anuluj", Gtk::RESPONSE_CANCEL);
-    dialog.add_button("Wybierz", Gtk::RESPONSE_OK);
+    dialog.add_button(_("Cancel"), Gtk::RESPONSE_CANCEL);
+    dialog.add_button(_("Select"), Gtk::RESPONSE_OK);
 
     int result = dialog.run();
     switch(result) {
@@ -110,15 +110,15 @@ for(Event &e : parsed_events) {
 
 void Settings::drawCalendars()
 {
-    name_label.set_label("Nazwa");
+    name_label.set_label(_("Name"));
     calendars_view.attach(name_label, 0, 0, 1, 1);
 
     for(unsigned int i = 0; i < Controler::getInstance()->calendars.size() + 1;  i++) {
-        if(i == 0) calendar_button[i].set_label("Dodaj");
+        if(i == 0) calendar_button[i].set_label(_("Add"));
         else {
-            calendar_button[i].set_label("Zmień");
-            calendar_remove[i].set_label("Usuń");
-            calendar_button_import[i].set_label("Importuj");
+            calendar_button[i].set_label(_("Change"));
+            calendar_remove[i].set_label(_("Delete"));
+            calendar_button_import[i].set_label(_("Import"));
             calendar_entry[i].set_text(Controler::getInstance()->calendars[i-1].getName());
             calendar_colors[i].set_color(Controler::getInstance()->calendars[i-1].getBgColor().getColor());
             calendar_remove[i].signal_clicked().connect(sigc::bind<unsigned int>( sigc::mem_fun(*this, &Settings::removeCalendar), (i-1)));
@@ -146,7 +146,7 @@ void Settings::drawTable()
 
     days_value.set_text("30");
     days_value.set_max_length(3);
-    label.set_text("dni");
+    label.set_text(_("days"));
 
     show_all_children();
 }
@@ -165,16 +165,18 @@ void Settings::removeOlder()
 
     string days_string_value=days_value.get_text();
     try {
-        int since_which_day=stoi(days_string_value);//how many days back to remove to
+        int since_which_day=stoi(days_string_value); //how many days back to remove to
 
-        Gtk::MessageDialog dialog(*this, "Usunąć wydarzenia starsze, niż "+days_string_value+" dni?",
+        string ask_ = _("Do you want to remove events older, than");
+        ask_ += " " + days_string_value + " " + _("days") + "?";
+        Gtk::MessageDialog dialog(*this, ask_,
                                   false, Gtk::MESSAGE_QUESTION, Gtk::BUTTONS_OK_CANCEL);
         int result = dialog.run();
 
         if(result==Gtk::RESPONSE_OK)
             deleteOlderThan(since_which_day);//If OK pressed, remove events
     } catch(...) {
-        Gtk::MessageDialog dialog(*this, "Napisz poprawną cyfrę?",
+        Gtk::MessageDialog dialog(*this, _("Write correct days number"),
                                   false, Gtk::MESSAGE_QUESTION, Gtk::BUTTONS_OK);
         dialog.run();
     }

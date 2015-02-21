@@ -1,0 +1,171 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015 Jozef Marek
+# This file is distributed under the same license as the calendar package.
+# Jozef Marek <ementos@gmail.com>, 2015.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-02-21 12:30+0100\n"
+"PO-Revision-Date: 2015-02-21 12:30+0100\n"
+"Last-Translator: Jozef Marek <ementos@gmail.com>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../src/Date.cpp:166 ../src/Date.cpp:190
+msgid "December"
+msgstr "Grudzień"
+
+#: ../src/Date.cpp:168 ../src/Date.cpp:192
+msgid "January"
+msgstr "Styczeń"
+
+#: ../src/Date.cpp:170
+msgid "February"
+msgstr "Luty"
+
+#: ../src/Date.cpp:172
+msgid "March"
+msgstr "Marzec"
+
+#: ../src/Date.cpp:174
+msgid "April"
+msgstr "Kwiecień"
+
+#: ../src/Date.cpp:176
+msgid "Mai"
+msgstr "Maj"
+
+#: ../src/Date.cpp:178
+msgid "June"
+msgstr "Czerwiec"
+
+#: ../src/Date.cpp:180
+msgid "July"
+msgstr "Lipiec"
+
+#: ../src/Date.cpp:182
+msgid "August"
+msgstr "Sierpień"
+
+#: ../src/Date.cpp:184
+msgid "September"
+msgstr "Wrzesień"
+
+#: ../src/Date.cpp:186
+msgid "October"
+msgstr "Październik"
+
+#: ../src/Date.cpp:188
+msgid "November"
+msgstr "Listopad"
+
+#: ../src/DB.cpp:38
+msgid "Default"
+msgstr "Domyślny"
+
+#: ../src/ui/Settings.cpp:9 ../src/ui/Calendar.cpp:48
+msgid "Settings"
+msgstr "Ustawienia"
+
+#: ../src/ui/Settings.cpp:11
+msgid "Main"
+msgstr "Główne"
+
+#: ../src/ui/Settings.cpp:12
+msgid "Calendars"
+msgstr "Kalendarze"
+
+#: ../src/ui/Settings.cpp:18
+msgid "Remove older than"
+msgstr "Usuń starsze, niż"
+
+#: ../src/ui/Settings.cpp:76
+msgid "Select iCalendar file"
+msgstr "Wybierz plik iCalendar"
+
+#: ../src/ui/Settings.cpp:81
+msgid "Cancel"
+msgstr "Anuluj"
+
+#: ../src/ui/Settings.cpp:82
+msgid "Select"
+msgstr "Wybierz"
+
+#: ../src/ui/Settings.cpp:113
+msgid "Name"
+msgstr "Nazwa"
+
+#: ../src/ui/Settings.cpp:117 ../src/ui/Add_event.cpp:21 ../src/ui/Day_view.cpp:16
+
+msgid "Add"
+msgstr "Dodaj"
+
+#: ../src/ui/Settings.cpp:119 ../src/ui/Add_event.cpp:47
+msgid "Change"
+msgstr "Zmień"
+
+#: ../src/ui/Settings.cpp:120 ../src/ui/Day_view.cpp:32
+#: ../src/ui/Day_view.cpp:125
+msgid "Delete"
+msgstr "Usuń"
+
+#: ../src/ui/Settings.cpp:121
+msgid "Import"
+msgstr "Importuj"
+
+#: ../src/ui/Settings.cpp:149 ../src/ui/Settings.cpp:170
+msgid "days"
+msgstr "dni"
+
+#: ../src/ui/Settings.cpp:170
+msgid "Do you want to remove events older, than"
+msgstr "Czy chcesz usunąć wydarzenia starsze, niż"
+
+#: ../src/ui/Settings.cpp:177
+msgid "Write correct days number"
+msgstr "Podaj poprawną liczbę dni"
+
+#: ../src/ui/Calendar.cpp:20
+msgid "Wallpaper Calendar"
+msgstr "Kalendarz"
+
+#: ../src/ui/Add_event.cpp:12
+msgid "Add new event"
+msgstr "Dodaj nowe wydarzenie"
+
+#: ../src/ui/Add_event.cpp:37
+msgid "Edit event"
+msgstr "Edytuj wydarzenie"
+
+#: ../src/ui/Day.cpp:97
+msgid "Mon"
+msgstr "Pon"
+
+#: ../src/ui/Day.cpp:100
+msgid "Tue"
+msgstr "Wt"
+
+#: ../src/ui/Day.cpp:103
+msgid "Wed"
+msgstr "Sr"
+
+#: ../src/ui/Day.cpp:106
+msgid "Thu"
+msgstr "Czw"
+
+#: ../src/ui/Day.cpp:109
+msgid "Fri"
+msgstr "Pt"
+
+#: ../src/ui/Day.cpp:112
+msgid "Sat"
+msgstr "So"
+
+#: ../src/ui/Day.cpp:115
+msgid "Sun"
+msgstr "Nd"

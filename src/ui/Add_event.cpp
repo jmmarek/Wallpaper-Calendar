@@ -9,7 +9,7 @@ Add_event::Add_event(Day *day, Day_view *parent)
 
     set_opacity(0.9);
     set_default_size(200, 100);
-    set_title("Dodaj nowe wydarzenie");
+    set_title(_("Add new event"));
 
     this->container = new Gtk::Grid;
     set_border_width(5);
@@ -18,7 +18,7 @@ Add_event::Add_event(Day *day, Day_view *parent)
     e->set_valign(Gtk::ALIGN_START);
 
     this->container->set_column_homogeneous(false);
-    o_button.set_label("Dodaj");
+    o_button.set_label(_("Add"));
     o_button.signal_clicked().connect(sigc::mem_fun(*this, &Add_event::addEvent));
 
     addCalendarCombo();
@@ -34,7 +34,7 @@ Add_event::Add_event(Day *day, Day_view *parent, int event)
 
     set_opacity(0.9);
     set_default_size(200, 100);
-    set_title("Edytuj wydarzenie");
+    set_title(_("Edit event"));
 
     this->container = new Gtk::Grid;
     set_border_width(5);
@@ -44,7 +44,7 @@ Add_event::Add_event(Day *day, Day_view *parent, int event)
     e->set_valign(Gtk::ALIGN_START);
 
     this->container->set_column_homogeneous(false);
-    o_button.set_label("Zatwierdź zmianę");
+    o_button.set_label(_("Change"));
     o_button.signal_clicked().connect(sigc::mem_fun(*this, &Add_event::editEvent));
 
     addCalendarCombo();

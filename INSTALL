@@ -1,0 +1,19 @@
+Installation Instructions
+*************************
+
+Copyright (C) 2015 Jozef Marek
+
+Installation
+==================
+   To compile this program follow this steps:
+       aclocal
+       intltoolize
+       autoreconf --install
+       automake --add-missing
+       ./configure
+       make
+       make install (optionally)
+
+   Or run SETUP.SH and then
+       make
+       make install

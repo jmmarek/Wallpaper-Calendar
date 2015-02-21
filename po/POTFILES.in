@@ -1,0 +1,7 @@
+src/Date.cpp
+src/DB.cpp
+src/ui/Settings.cpp
+src/ui/Calendar.cpp
+src/ui/Add_event.cpp
+src/ui/Day_view.cpp
+src/ui/Day.cpp
