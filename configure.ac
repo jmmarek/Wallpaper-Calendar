@@ -1,6 +1,6 @@
 AC_INIT(src/main.cpp)
 
-PACKAGE=calendar
+PACKAGE=wallpaper-calendar
 VERSION=0.1
 
 AM_INIT_AUTOMAKE($PACKAGE, $VERSION)
@@ -8,13 +8,13 @@ AM_INIT_AUTOMAKE($PACKAGE, $VERSION)
 #Translation
 IT_PROG_INTLTOOL([0.35.0])
 
-GETTEXT_PACKAGE=calendar
+GETTEXT_PACKAGE=wallpaper-calendar
 AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED([GETTEXT_PACKAGE], ["$GETTEXT_PACKAGE"],
                    [The domain to use with gettext])
 AM_GLIB_GNU_GETTEXT
 
-PROGRAMNAME_LOCALEDIR=[${datadir}/locale]
+PROGRAMNAME_LOCALEDIR=[$(datadir)/locale]
 AC_SUBST(PROGRAMNAME_LOCALEDIR)
 
 #Libraries
