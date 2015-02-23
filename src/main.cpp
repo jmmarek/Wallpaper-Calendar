@@ -12,7 +12,7 @@ int main(int argc, char* argv[])
     // Setup gtkmm
     Gtk::Main kit(argc, argv);
 
-    Controler::setInstance(argv[0]);
+    Controler::setInstance();
 
     Calendar calendar;
 

@@ -21,7 +21,7 @@ public:
     static Controler* getInstance(std::string path = "");
     static void deleteInstance();
 
-    static void setInstance(char *argv);
+    static void setInstance();
     void getEventsForEachDay(Day *day);///<Inserts events to days which are displayed
     void updateEvent(const Event &e);///<Updates event
     void insertEvent(Event &e, bool sync = true);///<\param e event \param sync whether synchronize after insertion

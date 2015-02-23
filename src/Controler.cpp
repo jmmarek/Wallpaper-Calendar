@@ -16,19 +16,15 @@ void Controler::deleteInstance()
     delete controler;
 }
 
-void Controler::setInstance(char *argv)
+void Controler::setInstance()
 {
-    string path = "";
-    //Getting local path of the progam file
-    const int filename=8;//length of "calendar" name
-    int llong=0;
-    for(int i=0; i<MAXPATHLEN; i++) {
-        if(argv[i])//because the argv may contains path and rubbishs!
-            path+=argv[i];
-        else break;
-        llong++;
-    }
-    path=path.substr(0, llong-filename);
+    // Create resource directory
+    string path = Glib::get_user_data_dir();
+    path += "/wallpaper-calendar/";
+    Glib::RefPtr< Gio::File > directory = Gio::File::create_for_path(path);
+    try {
+        directory->make_directory_with_parents();
+    } catch(Gio::Error e) {}
 
     if(controler != nullptr)
         return;
@@ -38,7 +34,7 @@ void Controler::setInstance(char *argv)
 
 Controler::Controler(std::string path)
 {
-    db = new DB(path+"calendars.db");
+    db = new DB(path+"data.db");
 }
 
 Controler::~Controler()
@@ -107,7 +103,7 @@ void Controler::getCalendars()
 
 CalendarV Controler::getCalendar(int id)
 {
-    for(CalendarV &c : calendars)
+for(CalendarV &c : calendars)
         if(c.getId() == id) {
             return c;
         }
