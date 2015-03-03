@@ -14,7 +14,7 @@ AC_DEFINE_UNQUOTED([GETTEXT_PACKAGE], ["$GETTEXT_PACKAGE"],
                    [The domain to use with gettext])
 AM_GLIB_GNU_GETTEXT
 
-PROGRAMNAME_LOCALEDIR=[$(datadir)/locale]
+PROGRAMNAME_LOCALEDIR=[${datadir}/locale]
 AC_SUBST(PROGRAMNAME_LOCALEDIR)
 
 #Libraries
