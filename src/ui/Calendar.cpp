@@ -23,7 +23,7 @@ Calendar::Calendar(): bar(675, 20, ""), bar_l(50, 20, ""), bar_r(50, 20, ""), se
     t.setTime();
 
     //Draw all month's days
-    for(int cday=0; cday<5*6; cday++) {
+    for(int cday=0; cday<5*7; cday++) {
         day[cday].setSize(true);
         day[cday].set_events(Gdk::BUTTON_PRESS_MASK);
         day[cday].signal_button_press_event().connect(sigc::bind<int>( sigc::mem_fun(*this, &Calendar::on_button_clicked), cday));
