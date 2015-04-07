@@ -98,7 +98,7 @@ void Calendar::drawMonthDays(Date &month_day)
             month_days_grid.attach(day[cday], dayweek, week+1, 1, 1);
             cday++;
 
-            if(r_day==end_day) {
+            if(r_day==end_day && started_this_month) {
                 finish=true;
                 r_day=1;
             } else r_day++;
